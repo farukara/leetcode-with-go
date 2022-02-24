@@ -6,13 +6,13 @@ import (
 )
 
 func main() {
-    nums := []int{3,0,1}
+    nums := []int{3,0,1} //2
     fmt.Println(missingNumber(nums))
-    nums = []int{0,1}
+    nums = []int{0,1} //2
     fmt.Println(missingNumber(nums))
-    nums = []int{9,6,4,2,3,5,7,0,1}
+    nums = []int{9,6,4,2,3,5,7,0,1} //8
     fmt.Println(missingNumber(nums))
-    nums = []int{0}
+    nums = []int{0} //1
     fmt.Println(missingNumber(nums))
 }
 
