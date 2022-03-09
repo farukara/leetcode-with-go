@@ -3,6 +3,7 @@ package main
 
 import (
     "fmt"
+    "sync"
 )
 
 /**
@@ -12,22 +13,43 @@ import (
  *     Next *ListNode
  * }
  */
+
  type ListNode struct {
      Val int
      Next *ListNode
  }
 
+ type LinkedList struct {
+     head *ListNode
+     size int
+     lock sync.RWMutex
+ }
+
  func makeLList (a []int) *ListNode {
-     if len(a) == 0 {return nil}
-     head := &ListNode{Val: a[0], Next: nil}
-     current := head
-     for i:=1; i<len(a); i++ {
-         node := &ListNode{Val: a[i]}
-         current.Next = node
-         current = node
+     var result LinkedList
+     var node ListNode
+     if len(a) == 0 {
+         return result.head
      }
-     return head
-}
+     if len(a)== 1 {
+         node.Val = a[0]
+         node.Next =nil
+         result.size = 1
+         result.head = &node
+         return result.head
+     }
+     node.Val = a[len(a)-1]
+     node.Next = nil
+     result.size = 1
+     next := &node
+     for i:=len(a)-2; i>=0; i-- {
+         node := ListNode{a[i], next}
+         next = &node
+         result.size++
+     }
+     result.head = next
+     return result.head
+ }
 
 func reverseList(head *ListNode) *ListNode {
     if head == nil {return nil}
@@ -58,9 +80,23 @@ func reverseList(head *ListNode) *ListNode {
 }
 func main() {
     head := []int{1,2,3,4,5} // [5,4,3,2,1]
-    fmt.Println("RESULT:", reverseList(makeLList(head)), "\n")
+    result := reverseList(makeLList(head))
+    for result != nil {
+        fmt.Println(result.Val)
+        result = result.Next
+    }
     head = []int{1,2} // [2,1]
+    result = reverseList(makeLList(head))
     fmt.Println("result:", reverseList(makeLList(head)), "\n")
+    for result != nil {
+        fmt.Println(result.Val)
+        result = result.Next
+    }
     head = []int{} // []
+    result = reverseList(makeLList(head))
     fmt.Println("result:", reverseList(makeLList(head)), "\n")
+    for result != nil {
+        fmt.Println(result.Val)
+        result = result.Next
+    }
 }
