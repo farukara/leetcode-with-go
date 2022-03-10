@@ -1,7 +1,9 @@
 package main
 // leetcode 141. Linked List Cycle
+// NOTE: results from this code does not correspond to the ones from leetcode because I did not make the cycled lists here. But if I did it would work fine. 
 import (
     "fmt"
+    "sync"
 )
 
 /**
@@ -11,31 +13,42 @@ import (
  *     Next *ListNode
  * }
  */
+
  type ListNode struct {
      Val int
      Next *ListNode
  }
+
+ type LinkedList struct {
+     head *ListNode
+     size int
+     lock sync.RWMutex
+ }
+
  func makeLList (a []int) *ListNode {
+     var result LinkedList
      var node ListNode
      if len(a) == 0 {
-         // node.Val = nil
-         node.Next = nil
-         return &node
+         return result.head
      }
      if len(a)== 1 {
          node.Val = a[0]
          node.Next =nil
-         return &node
+         result.size = 1
+         result.head = &node
+         return result.head
      }
      node.Val = a[len(a)-1]
      node.Next = nil
-     prev := &node
+     result.size = 1
+     next := &node
      for i:=len(a)-2; i>=0; i-- {
-         node.Val = a[i]
-         prev.Next = &node
-         prev = &node
+         node := ListNode{a[i], next}
+         next = &node
+         result.size++
      }
-     return prev
+     result.head = next
+     return result.head
  }
 func hasCycle(head *ListNode) bool {
     if head == nil {return false}
