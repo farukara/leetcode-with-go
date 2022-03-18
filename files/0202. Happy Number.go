@@ -5,26 +5,22 @@ import (
     "fmt"
 )
 func isHappy(n int) bool {
-    var m = make(map[int]struct{})
-    for n !=1 {
-        if n == 1 {return true}
-        if _,ok := m[n]; ok {
-            return false
-        } else {
-            m[n] = struct{}{}
+    ss := func (i int) int {
+        tot := 0
+        for i > 0 {
+            tot += (i%10) * (i%10)
+            i /= 10
         }
-        var digits []int
-        for n>9 {
-            digits = append(digits, n%10)
-            n = n/10
-        }
-        digits = append(digits, n%10)
-        n = 0
-        for _,v := range digits {
-            n += v*v
-        }
+        return tot
     }
-    return true
+    slow := ss(n)
+    fast := ss(ss(n))
+    for slow != fast {
+        if slow == 1 || fast == 1 {return true}
+        slow = ss(slow)
+        fast = ss(ss(fast))
+    }
+    return false
 }
 
 func main() {
