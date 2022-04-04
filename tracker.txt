@@ -1,11 +1,83 @@
+2177. done logic/math Find Three Consecutive Integers That Sum to a Given Number
+
 2032. done
+
+1931. NOTE: DP Painting a Grid with Three Different Colors
+
+1646. done DP memoization Get Maximum in Generated Array
+
+0941. done array
+
+0746. done DP min cost climbing stairs
+
+0647. done Palindromic Substrings - expanding around center technique
+
+0509. done DP memoization, simple fibonacci
+
+0474. FIX: DP
+
+0448. done array Find All Numbers Disappeared in an Array
+
+0442. done array Find All Duplicates in an Array
+0441. done logic Arranging Coins
+
+0401. NOTE: Bit manipulation
+
+0371. done Bit manipulation Sum of two integers 
+
+0338. done DP, Bit manipulation
+
+0322. done DP minimum coin change
+
+0268. done 
+
+0258. done recursion - Add Digits
 
 0242. done
 
 0237. done
 
-0212. NOTE:  DFS+Hashmap or DFS+Trie
+0217. done Array Contains Duplicate
+
+0212. NOTE: DFS+Hashmap or DFS+Trie
+
+0206. done Reverse Linked List
+
+0202. done Slow-Fast pointers, Happy Number
+
+0191. done Bit manipulation
+0190. done Bit manipulation
+
+0174. NOTE: DP? or BFS?
+
+0141. done  Linked List Cycle
+
+0136. done Bit manipulation
+
+0128. done array map Longest Consecutive Sequence
+
+0119. done array Pascal's Triangle II
+0118. done array Pascal's Triangle
+
+0091. NOTE: DP Decode Ways
+
+0070. done DP Climbing Stairs
+
+0064. done DP Minimum Path Sum
+0063. done DP Unique Paths II
+0062. done DP Unique Paths
+
+0055. done Jump Game - Greedy BFS O(n) or DP with O(n2) 
+
+0053. done DP Maximum Subarray
+
+0045. done Jump Game II - Greedy BFS O(n) or DP with O(n2) 
+
+0021. done linked list 21. Merge Two Sorted Lists
 
 0007. NOTE:
 
+0005. done: did in O(n2), Longest Palindromic Substring. try also DP which is O(n2) as well.
+
+0002. done linked list - Add Two Numbers
 0001. done
