@@ -1,8 +1,12 @@
+2095. done linked list slow fast pointers Delete the Middle Node of a Linked List
+
 2177. done logic/math Find Three Consecutive Integers That Sum to a Given Number
 
 2032. done
 
 1931. NOTE: DP Painting a Grid with Three Different Colors
+
+1721. done Swapping Nodes in a Linked List
 
 1646. done DP memoization Get Maximum in Generated Array
 
@@ -50,6 +54,8 @@
 
 0174. NOTE: DP? or BFS?
 
+0143. FIX:  linked list Reorder List
+
 0141. done  Linked List Cycle
 
 0136. done Bit manipulation
@@ -73,7 +79,12 @@
 
 0045. done Jump Game II - Greedy BFS O(n) or DP with O(n2) 
 
+0025. NOTE: linked list 25. Reverse Nodes in k-Group
+0024. done linked list 24. Swap Nodes in Pairs
+
 0021. done linked list 21. Merge Two Sorted Lists
+
+0019. done linked list 19. Remove Nth Node From End of List
 
 0007. NOTE:
 
